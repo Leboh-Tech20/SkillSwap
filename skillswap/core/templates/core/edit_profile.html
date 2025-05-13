@@ -1,0 +1,71 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+
+
+<div class="card p-4 shadow fade-in">
+  <h3 class="text-primary fw-bold mb-3">🖊️ Edit Your Profile</h3>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label class="form-label">Bio</label>
+      {{ form.bio }}
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Location</label>
+      {{ form.location }}
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Video Intro (YouTube Embed URL)</label>
+      {{ form.video_intro_url }}
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Profile Image</label>
+      {{ form.profile_image }}
+    </div>
+    <button type="submit" class="btn btn-primary w-100">💾 Save Changes</button>
+  </form>
+</div>
+
+{% endblock %}
+/* Welcome Hero Section */
+.welcome-hero {
+  background-color: #dde3ec;
+  padding: 4rem 1.5rem;
+  border-radius: 12px;
+  max-width: 960px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.text-highlight {
+  color: #4169e1;
+  font-weight: 700;
+}
+
+body.dark-mode .welcome-hero {
+  background-color: #1e293b;
+  color: #f8fafc;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .text-highlight {
+  color: #60a5fa;
+}
+
+/* Responsive Typography for Hero */
+@media (max-width: 767px) {
+  .welcome-hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .welcome-hero p {
+    font-size: 1rem;
+  }
+
+  .card h4 {
+    font-size: 1.1rem;
+  }
+}

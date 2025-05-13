@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<!-- Back Button -->
+
+
+<div class="fade-in">
+  <div class="mb-4 text-center">
+    <h2 class="fw-bold text-primary">🎯 Your Skill Matches</h2>
+    <p class="text-muted">We've found users who either offer or need the same skills as you.</p>
+  </div>
+
+  {% if matches %}
+  <div class="row">
+    {% for match in matches %}
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm custom-card h-100 d-flex flex-column justify-content-between">
+          <div class="card-body">
+            <h5 class="card-title fw-bold text-capitalize">{{ match.skill.name }}</h5>
+            <p class="text-muted">{{ match.description|truncatewords:20 }}</p>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <small>
+                👤 <strong>{{ match.user.username }}</strong><br>
+                📍 {{ match.user.location }}
+              </small>
+              <span class="badge {% if match.is_offer %}bg-success{% else %}bg-warning text-dark{% endif %}">
+                {{ match.is_offer|yesno:"Offering,Looking for" }}
+              </span>
+            </div>
+          </div>
+          <div class="card-footer bg-transparent border-0">
+            <a href="{% url 'messages' match.user.id %}" class="btn btn-sm btn-outline-primary w-100">
+              💬 Send Message
+            </a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="alert alert-info text-center mt-4">
+    <h5>No matches found yet.</h5>
+    <p>Try posting more skills or exploring others’ listings!</p>
+  </div>
+  {% endif %}
+</div>
+
+{% endblock %}

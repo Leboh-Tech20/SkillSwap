@@ -1,0 +1,245 @@
+/* 🌞 Light Mode Base Styles */
+body {
+    background-color: #f6f9fc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1e293b;
+}
+
+/* Navbar - Light Mode */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+}
+
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar .nav-item span,
+.navbar h1 {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.3px;
+}
+
+.navbar .nav-link:hover {
+    color: #3b82f6;
+    font-weight: 700;
+}
+
+/* Cards - Light Mode */
+.card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(to right, #4f46e5, #3b82f6);
+    border: none;
+    color: white;
+}
+
+/* Back button - Light mode */
+.btn-outline-secondary {
+    background-color: #e2e8f0;
+    color: #1e293b;
+    border-color: #cbd5e1;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #cbd5e1;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+/* Typography */
+h1, h2, h4 {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+p, small, label, .form-label {
+    color: #334155;
+}
+
+/* Forms */
+input, select, textarea {
+    border-radius: 10px !important;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌙 Dark Mode Overrides */
+body.dark-mode {
+    background-color: #1e293b;
+    color: #f8fafc;
+}
+
+/* Navbar - Dark Mode */
+body.dark-mode .navbar {
+    background-color: #0f172a !important;
+    color: #f8fafc;
+}
+
+body.dark-mode .navbar .nav-link,
+body.dark-mode .navbar-brand,
+body.dark-mode .navbar span,
+body.dark-mode .navbar h1 {
+    color: #f8fafc;
+    font-weight: 600;
+}
+
+/* Cards - Dark Mode */
+body.dark-mode .card,
+body.dark-mode .list-group-item {
+    background-color: #334155;
+    color: #f1f5f9;
+    border-color: #475569;
+}
+
+body.dark-mode .custom-card {
+    background-color: #334155;
+    color: #f8fafc;
+}
+
+/* Form Elements - Dark Mode */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea,
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    background-color: #475569;
+    color: #f8fafc;
+    border-color: #64748b;
+}
+
+/* Back button - Dark Mode */
+body.dark-mode .btn-outline-secondary {
+    color: #f8fafc;
+    background-color: transparent;
+    border-color: #94a3b8;
+}
+
+body.dark-mode .btn-outline-secondary:hover {
+    background-color: #94a3b8;
+    color: #1e293b;
+    font-weight: 600;
+}
+
+/* Primary Button - Dark Mode */
+body.dark-mode .btn-primary {
+    background: linear-gradient(to right, #6476f1, #4f8efc);
+    color: white;
+}
+
+body.dark-mode .btn-primary:hover {
+    filter: brightness(1.2);
+}
+
+/* Alerts */
+body.dark-mode .alert {
+    background-color: #475569;
+    color: #f8fafc;
+    border-color: #64748b;
+}
+
+/* Typography - Dark Mode */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h4,
+body.dark-mode p,
+body.dark-mode small,
+body.dark-mode label,
+body.dark-mode a,
+body.dark-mode .form-label {
+    color: #f8fafc !important;
+}
+
+/* Utility Fixes */
+body.dark-mode .text-muted {
+    color: #cbd5e1 !important;
+}
+
+body.dark-mode .text-primary,
+body.dark-mode .text-blue-600 {
+    color: #60a5fa !important;
+}
+
+body.dark-mode .text-success {
+    color:#3b82f6 !important;
+}
+
+body.dark-mode .text-purple {
+    color: #c084fc !important;
+}
+
+body.dark-mode .badge {
+    background-color: #64748b !important;
+    color: #f8fafc !important;
+}
+
+body.dark-mode .bg-light {
+    background-color: #475569 !important;
+    color: #f8fafc !important;
+}
+
+a.back-link:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+
+/* Welcome Hero Section */
+.welcome-hero {
+    background-color: #dde3ec;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.text-highlight {
+    color: #4169e1;
+}
+
+body.dark-mode .welcome-hero {
+    background-color: #1e293b;
+    color: #f8fafc;
+}
+
+body.dark-mode .text-highlight {
+    color: #60a5fa;
+}
+
+body.dark-mode .dark-toggle-btn {
+    color: #f8fafc;
+    border-color: #f8fafc;
+}
+
+body.dark-mode .dark-toggle-btn:hover {
+    background-color: #f8fafc;
+    color: #1e293b;
+}
+
+/* Chat Input Styling for Dark Mode */
+body.dark-mode textarea.form-control {
+    background-color: #475569;
+    color: #f8fafc;
+    border-color: #64748b;
+}
+
+body.dark-mode textarea.form-control::placeholder {
+    color: #cbd5e1;
+}
+

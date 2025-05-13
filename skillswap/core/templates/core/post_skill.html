@@ -1,0 +1,78 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<!-- Back Button -->
+<div class="fade-in">
+  <div class="mb-4 text-center">
+    <h2 class="fw-bold text-primary">📤 Post a Skill</h2>
+    <p class="text-muted">Let the community know what you're offering or what help you need.</p>
+  </div>
+
+  {% if error %}
+    <div class="alert alert-danger text-center">
+      {{ error }}
+    </div>
+  {% endif %}
+
+  <form method="post" class="card p-4 shadow-sm rounded fade-in">
+    {% csrf_token %}
+
+    <!-- Skill Select -->
+    <div class="mb-3">
+      <label for="skill" class="form-label fw-semibold">Select Skill</label>
+      <select name="skill" id="skill" class="form-select" onchange="toggleOtherSkill(this)">
+        {% for skill in skills %}
+          <option value="{{ skill.id }}">{{ skill.name }}</option>
+        {% endfor %}
+        <option value="other">Other (not listed)</option>
+      </select>
+    </div>
+
+    <!-- Other Skill Input -->
+    <div class="mb-3" id="other-skill-div" style="display: none;">
+      <label for="other_skill" class="form-label fw-semibold">Enter Custom Skill</label>
+      <input type="text" name="other_skill" id="other_skill" class="form-control" placeholder="e.g. Drone Flying">
+    </div>
+
+    <!-- Description with Tooltip -->
+    <div class="mb-3">
+      <label for="description" class="form-label fw-semibold">Short Description</label>
+      <textarea
+        name="description"
+        class="form-control"
+        rows="3"
+        placeholder="Describe what you're offering or looking for..."
+        data-bs-toggle="tooltip"
+        title="Give a brief but helpful explanation of this skill or request.">
+      </textarea>
+    </div>
+
+    <!-- Offer & Need Checkboxes -->
+    <div class="mb-3">
+      <label class="form-label fw-semibold">What are you doing with this skill?</label>
+      <div class="form-check">
+        <input type="checkbox" name="is_offer" class="form-check-input" id="is_offer">
+        <label class="form-check-label" for="is_offer">I'm offering this skill</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" name="is_need" class="form-check-input" id="is_need">
+        <label class="form-check-label" for="is_need">I'm looking for this skill</label>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit" class="btn btn-primary w-100">
+      🚀 Post My Skill
+    </button>
+  </form>
+</div>
+
+<!-- JavaScript -->
+<script>
+  function toggleOtherSkill(select) {
+    const otherDiv = document.getElementById('other-skill-div');
+    otherDiv.style.display = (select.value === 'other') ? 'block' : 'none';
+  }
+</script>
+
+{% endblock %}

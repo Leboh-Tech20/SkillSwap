@@ -1,0 +1,78 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<!-- Hero Section -->
+<div class="welcome-hero text-center py-5 px-3 rounded shadow-sm fade-in">
+  <h1 class="display-5 fw-bold mb-3">
+    Empowering Growth Through <span class="text-highlight">Sharing Knowledge</span>
+  </h1>
+  <p class="lead text-muted mb-4">
+    SkillSwap connects people who need help with those who have the skills to help.
+  </p>
+  <div class="d-flex justify-content-center gap-3 flex-wrap">
+    <a href="#features" class="btn btn-primary px-4 py-2">🚀 Key Features</a>
+    <a href="#how" class="btn btn-outline-dark dark-toggle-btn px-4 py-2">📘 How It Works?</a>
+  </div>
+</div>
+
+<!-- Features Section -->
+<section id="features" class="mt-5 text-center fade-in">
+  <h2 class="fw-bold mb-4">🔑 Key Features</h2>
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card p-4 h-100 shadow-sm custom-card">
+        <h4 class="fw-bold text-primary mb-2">🤝 Skill Matching</h4>
+        <p class="text-muted">Connect with users based on what you offer or need.</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card p-4 h-100 shadow-sm custom-card">
+        <h4 class="fw-bold text-success mb-2">💬 Built-in Messaging</h4>
+        <p class="text-muted">Chat directly before making agreements.</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card p-4 h-100 shadow-sm custom-card">
+        <h4 class="fw-bold text-warning mb-2">🔒 Verified Profiles</h4>
+        <p class="text-muted">Build trust with video intros and reviews.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works Section -->
+<section id="how" class="mt-5 text-center fade-in">
+  <h2 class="fw-bold mb-4">📘 How It Works</h2>
+  <p class="lead text-muted">It’s easy to get started:</p>
+
+  <div class="row mt-4">
+    <div class="col-md-3 mb-4">
+      <div class="card p-4 h-100 shadow-sm custom-card">
+        <h4 class="fw-bold text-primary mb-2">1️⃣ Sign Up</h4>
+        <p class="text-muted">Create a free account to join the SkillSwap community.</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card p-4 h-100 shadow-sm custom-card">
+        <h4 class="fw-bold text-success mb-2">2️⃣ Post Skills</h4>
+        <p class="text-muted">Share what you're offering or looking to learn.</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card p-4 h-100 shadow-sm custom-card">
+        <h4 class="fw-bold text-warning mb-2">3️⃣ Get Matched</h4>
+        <p class="text-muted">We find others who fit your needs or offers.</p>
+      </div>
+    </div>
+    <div class="col-md-3 mb-4">
+      <div class="card p-4 h-100 shadow-sm custom-card">
+        <h4 class="fw-bold text-purple mb-2">4️⃣ Connect</h4>
+        <p class="text-muted">Message, agree, and start exchanging skills!</p>
+      </div>
+    </div>
+  </div>
+
+  <a href="{% url 'register' %}" class="btn btn-success mt-4 px-4 py-2">🎉 Get Started</a>
+</section>
+
+{% endblock %}

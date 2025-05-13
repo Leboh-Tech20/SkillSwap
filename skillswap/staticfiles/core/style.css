@@ -1,0 +1,61 @@
+body {
+    background-color: #f6f9fc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.btn-primary {
+    background: linear-gradient(to right, #4f46e5, #3b82f6);
+    border: none;
+}
+
+h1, h2, h4 {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+p {
+    color: #334155;
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+body.dark-mode {
+    background-color: #1e293b;
+    color: #f1f5f9;
+}
+
+body.dark-mode .navbar {
+    background-color: #0f172a !important;
+}
+
+body.dark-mode .card {
+    background-color: #334155;
+    color: #f8fafc;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    background-color: #475569;
+    color: #e2e8f0;
+}
